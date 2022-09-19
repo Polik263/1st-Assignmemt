@@ -39,9 +39,9 @@ public class CharacterMovement : MonoBehaviour
     }
     private bool IsTouchingFloor()
     {
-        Vector3 position = transform.position + Vector3.down * 1f;
+        Vector3 position = transform.position + Vector3.down * 0.1f;
         RaycastHit hit;
-        return Physics.SphereCast(transform.position, 0.15f, Vector3.down, out hit, 1f);
+        return Physics.SphereCast(transform.position, 0.15f, Vector3.down, out hit, 0.1f);
     }
     
 }
