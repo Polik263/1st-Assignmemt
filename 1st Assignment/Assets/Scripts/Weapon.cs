@@ -7,6 +7,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private PlayerTurn playerTurn;
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform shootingStartPosition;
+    [SerializeField] private Vector3 offset;
 
     private void Update()
     {
@@ -17,7 +18,7 @@ public class Weapon : MonoBehaviour
             {
                 TurnManager.GetInstance().TriggerChangeTurn();
                 GameObject newProjectile = Instantiate(projectilePrefab);
-                newProjectile.transform.position = shootingStartPosition.position;
+                newProjectile.transform.position = shootingStartPosition.position + offset;
                 newProjectile.GetComponent<Projectile>().Initialize();
             }
         }

@@ -8,6 +8,8 @@ public class TurnManager : MonoBehaviour
     [SerializeField] private PlayerTurn playerOne;
     [SerializeField] private PlayerTurn playerTwo;
     [SerializeField] private float timeBetweenTurns;
+    [SerializeField] private Camera camOne;
+    [SerializeField] private Camera camTwo;
 
     private int currentPlayerIndex;
     private bool waitingForNextTurn;
@@ -69,4 +71,18 @@ public class TurnManager : MonoBehaviour
             currentPlayerIndex = 1;
         }
     }
-}
+    private void ChangeCamera()
+    {
+        if (currentPlayerIndex == 1)
+        {
+            camOne.enabled = true;
+            camTwo.enabled = false;
+        }
+        else if (currentPlayerIndex == 2)
+        {
+            camOne.enabled = false;
+            camTwo.enabled = true;
+        }
+
+    }
+}   

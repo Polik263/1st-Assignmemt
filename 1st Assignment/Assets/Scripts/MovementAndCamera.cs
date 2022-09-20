@@ -60,13 +60,15 @@ public class MovementAndCamera : MonoBehaviour
 
     private void ReadRotationInput()
     {
-        yaw += speedH * Input.GetAxis("Mouse X");
-        pitch -= speedV * Input.GetAxis("Mouse Y");
-        pitch = Mathf.Clamp(pitch, -pitchClamp, pitchClamp);
+        if (playerTurn.IsPlayerTurn())
+        {
+            yaw += speedH * Input.GetAxis("Mouse X");
+            pitch -= speedV * Input.GetAxis("Mouse Y");
+            pitch = Mathf.Clamp(pitch, -pitchClamp, pitchClamp);
 
-        characterCamera.transform.localEulerAngles = new Vector3(pitch, 0.0f, 0.0f);
-        transform.eulerAngles = new Vector3(0.0f, yaw, 0.0f);
-    }
-
+            characterCamera.transform.localEulerAngles = new Vector3(pitch, 0.0f, 0.0f);
+            transform.eulerAngles = new Vector3(0.0f, yaw, 0.0f);
+        }
+    } 
 
 }
