@@ -23,6 +23,7 @@ public class TurnManager : MonoBehaviour
             currentPlayerIndex = 1;
             playerOne.SetPlayerTurn(1);
             playerTwo.SetPlayerTurn(2);
+            ChangeCamera();
         }
     }
 
@@ -36,6 +37,7 @@ public class TurnManager : MonoBehaviour
                 turnDelay = 0;
                 waitingForNextTurn = false;
                 ChangeTurn();
+                ChangeCamera();
             }
         }
     }
