@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    public Collider projectileCollider;
     [SerializeField] private float speed;
     [SerializeField] private Rigidbody projectileBody;
     [SerializeField] private GameObject damageIndicatorPrefab;
@@ -19,8 +20,14 @@ public class Projectile : MonoBehaviour
  
     { 
         isActive = true;
-        projectileBody.AddForce (transform.forward* 500f);
-         
+        projectileBody.AddForce (transform.forward * 700f);
+        projectileBody.AddForce(transform.up * 100);
     }
-
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.tag == "Ground")
+        {
+            projectileCollider.enabled = false;
+        }
+    }
 }

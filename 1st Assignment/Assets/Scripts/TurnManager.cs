@@ -7,9 +7,13 @@ public class TurnManager : MonoBehaviour
     private static TurnManager instance;
     [SerializeField] private PlayerTurn playerOne;
     [SerializeField] private PlayerTurn playerTwo;
+    [SerializeField] private PlayerTurn playerThree;
+    [SerializeField] private PlayerTurn playerFour;
     [SerializeField] private float timeBetweenTurns;
     [SerializeField] private Camera camOne;
     [SerializeField] private Camera camTwo;
+    [SerializeField] private Camera camThree;
+    [SerializeField] private Camera camFour;
 
     private int currentPlayerIndex;
     private bool waitingForNextTurn;
@@ -23,6 +27,8 @@ public class TurnManager : MonoBehaviour
             currentPlayerIndex = 1;
             playerOne.SetPlayerTurn(1);
             playerTwo.SetPlayerTurn(2);
+            playerThree.SetPlayerTurn(3);
+            playerFour.SetPlayerTurn(4);
             ChangeCamera();
         }
     }
@@ -70,6 +76,14 @@ public class TurnManager : MonoBehaviour
         }
         else if (currentPlayerIndex == 2)
         {
+            currentPlayerIndex = 3;
+        }
+        else if (currentPlayerIndex == 3)
+        {
+            currentPlayerIndex = 4;
+        }
+        else if (currentPlayerIndex == 4)
+        {
             currentPlayerIndex = 1;
         }
     }
@@ -79,12 +93,29 @@ public class TurnManager : MonoBehaviour
         {
             camOne.enabled = true;
             camTwo.enabled = false;
+            camThree.enabled = false;
+            camFour.enabled = false;
         }
         else if (currentPlayerIndex == 2)
         {
             camOne.enabled = false;
             camTwo.enabled = true;
+            camThree.enabled = false;
+            camFour.enabled = false;
         }
-
+        else if (currentPlayerIndex == 3)
+        {
+            camOne.enabled = false;
+            camTwo.enabled = false;
+            camThree.enabled = true;
+            camFour.enabled = false;
+        }
+        else if (currentPlayerIndex == 4)
+        {
+            camOne.enabled = false;
+            camTwo.enabled = false;
+            camThree.enabled = false;
+            camFour.enabled = true;
+        }
     }
 }   

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -7005312573084272811}
   m_Layer: 0
   m_Name: Projectile
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,6 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 716ce6512358c9443b6d728ec6412a27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectileCollider: {fileID: 2814647872152604419}
   speed: 5
   projectileBody: {fileID: -7005312573084272811}
   damageIndicatorPrefab: {fileID: 4311257005320710391, guid: 0ccc97148649100478bff3c322fb5a53, type: 3}

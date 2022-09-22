@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     public HealthBar healthBar;
@@ -20,11 +20,19 @@ public class PlayerHealth : MonoBehaviour
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
     }
-    void Update()
+    void OnCollisionEnter(Collision collision)
     {
-        if (Input.GetKeyDown(KeyCode.J))
+        if (collision.collider.tag == "Projectile")
         {
             TakeDamage(20);
+        }
+    
+        Scene currentscene = SceneManager.GetActiveScene();
+
+        if (currentHealth == 0)
+
+        {
+            SceneManager.LoadScene("SampleScene");
         }
     }
 }
