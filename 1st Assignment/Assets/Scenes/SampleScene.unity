@@ -3281,6 +3281,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1913718854}
     - target: {fileID: 4848261224629891215, guid: c0bb5208e0d9f444d95f003beae7427d, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1310236007}
+    - target: {fileID: 4848261224629891215, guid: c0bb5208e0d9f444d95f003beae7427d, type: 3}
       propertyPath: playerTurn
       value: 
       objectReference: {fileID: 1310235997}
@@ -3468,6 +3472,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 146327942}
+    - target: {fileID: 6044656241980797475, guid: c0bb5208e0d9f444d95f003beae7427d, type: 3}
+      propertyPath: m_Name
+      value: Eye2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0bb5208e0d9f444d95f003beae7427d, type: 3}
 --- !u!1 &920252482
@@ -4270,6 +4278,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1091659278}
   m_CullTransparentMesh: 1
+--- !u!1 &1105365008 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6044656241034093078, guid: c0bb5208e0d9f444d95f003beae7427d, type: 3}
+  m_PrefabInstance: {fileID: 1503454495}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1105365009 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6044656241034093070, guid: c0bb5208e0d9f444d95f003beae7427d, type: 3}
@@ -4280,12 +4293,32 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6044656241897694683, guid: c0bb5208e0d9f444d95f003beae7427d, type: 3}
   m_PrefabInstance: {fileID: 1503454495}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1105365008}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0b738bdeab59164c80e26333c92bf8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1105365020
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105365008}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c0b37f8785cc04340a0c57a234cca303, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1113815424
 GameObject:
   m_ObjectHideFlags: 0
@@ -5100,6 +5133,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1310235995 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6044656241034093078, guid: c0bb5208e0d9f444d95f003beae7427d, type: 3}
+  m_PrefabInstance: {fileID: 830751312}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1310235996 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6044656241034093070, guid: c0bb5208e0d9f444d95f003beae7427d, type: 3}
@@ -5110,12 +5148,32 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6044656241897694683, guid: c0bb5208e0d9f444d95f003beae7427d, type: 3}
   m_PrefabInstance: {fileID: 830751312}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1310235995}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0b738bdeab59164c80e26333c92bf8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1310236007
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310235995}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 423371abb20caee45aadfd556eef910e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!43 &1318960345
 Mesh:
   m_ObjectHideFlags: 0
@@ -5961,6 +6019,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1240773250}
     - target: {fileID: 4848261224629891215, guid: c0bb5208e0d9f444d95f003beae7427d, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1105365020}
+    - target: {fileID: 4848261224629891215, guid: c0bb5208e0d9f444d95f003beae7427d, type: 3}
       propertyPath: playerTurn
       value: 
       objectReference: {fileID: 1105365010}
@@ -6148,6 +6210,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 331428989}
+    - target: {fileID: 6044656241980797475, guid: c0bb5208e0d9f444d95f003beae7427d, type: 3}
+      propertyPath: m_Name
+      value: Eye2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0bb5208e0d9f444d95f003beae7427d, type: 3}
 --- !u!1 &1508113555 stripped
