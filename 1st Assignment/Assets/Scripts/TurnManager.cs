@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class TurnManager : MonoBehaviour
 {
@@ -14,10 +16,13 @@ public class TurnManager : MonoBehaviour
     [SerializeField] private Camera camTwo;
     [SerializeField] private Camera camThree;
     [SerializeField] private Camera camFour;
+    [SerializeField] private float maxTimePerTurn;
+    [SerializeField] private TextMeshProUGUI seconds;
 
     private int currentPlayerIndex;
     private bool waitingForNextTurn;
     private float turnDelay;
+    private float currentTurnTime;
 
     private void Awake()
     {
@@ -35,6 +40,14 @@ public class TurnManager : MonoBehaviour
 
     private void Update()
     {
+        currentTurnTime += Time.deltaTime;
+        seconds.text = Mathf.RoundToInt(currentTurnTime).ToString();
+
+        if (currentTurnTime >= maxTimePerTurn)
+        {
+            waitingForNextTurn = true;
+        }
+
         if (waitingForNextTurn)
         {
             turnDelay += Time.deltaTime;
@@ -44,6 +57,7 @@ public class TurnManager : MonoBehaviour
                 waitingForNextTurn = false;
                 ChangeTurn();
                 ChangeCamera();
+                currentTurnTime = 0;
             }
         }
     }
