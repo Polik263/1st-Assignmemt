@@ -20,8 +20,8 @@ public class Projectile : MonoBehaviour
  
     { 
         isActive = true;
-        projectileBody.AddForce (transform.forward * 700f);
-        projectileBody.AddForce(transform.up * 100);
+        projectileBody.AddForce(transform.forward * 1000f);
+        projectileBody.AddForce(transform.up * 80f);
     }
     private void OnCollisionEnter(Collision collision)
     {
