@@ -41,7 +41,7 @@ public class TurnManager : MonoBehaviour
     private void Update()
     {
         currentTurnTime += Time.deltaTime;
-        seconds.text = Mathf.RoundToInt(currentTurnTime).ToString();
+        seconds.text = Mathf.RoundToInt(maxTimePerTurn - currentTurnTime).ToString();
 
         if (currentTurnTime >= maxTimePerTurn)
         {
