@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     public HealthBar healthBar;
     public int maxHealth = 100;
     public int currentHealth;
-
+    
 
     void Start()
     {
@@ -24,15 +23,16 @@ public class PlayerHealth : MonoBehaviour
     {
         if (collision.collider.tag == "Projectile")
         {
-            TakeDamage(20);
+            TakeDamage(100);
         }
     
-        Scene currentscene = SceneManager.GetActiveScene();
 
-        if (currentHealth == 0)
+        if (currentHealth <= 0)
 
         {
-            SceneManager.LoadScene("SampleScene");
+            gameObject.GetComponent<MovementAndCamera>().enabled = false;
+            
         }
+        
     }
 }

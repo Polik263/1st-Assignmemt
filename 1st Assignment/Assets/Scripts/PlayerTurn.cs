@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerTurn : MonoBehaviour
 {
     private int playerIndex;
+    [SerializeField] Camera myCamera;
 
     public void SetPlayerTurn(int index)
     {
@@ -15,4 +16,20 @@ public class PlayerTurn : MonoBehaviour
     {
         return TurnManager.GetInstance().IsItPlayerTurn(playerIndex);
     }
+
+    public int GetPlayerTurn()
+    {
+        return playerIndex;
+    }
+
+    public MovementAndCamera MV()
+    {
+        return GetComponent<MovementAndCamera>();
+    }
+
+    public Camera GetCamera()
+    {
+        return myCamera;
+    }
+    
 }

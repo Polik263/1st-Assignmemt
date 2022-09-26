@@ -3,21 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class TurnManager : MonoBehaviour
 {
     private static TurnManager instance;
-    [SerializeField] private PlayerTurn playerOne;
-    [SerializeField] private PlayerTurn playerTwo;
-    [SerializeField] private PlayerTurn playerThree;
-    [SerializeField] private PlayerTurn playerFour;
+    [SerializeField] private List<PlayerTurn> playerTurns;
     [SerializeField] private float timeBetweenTurns;
-    [SerializeField] private Camera camOne;
-    [SerializeField] private Camera camTwo;
-    [SerializeField] private Camera camThree;
-    [SerializeField] private Camera camFour;
     [SerializeField] private float maxTimePerTurn;
     [SerializeField] private TextMeshProUGUI seconds;
+    [SerializeField] private List<Camera> cameras;
+
+
 
     private int currentPlayerIndex;
     private bool waitingForNextTurn;
@@ -26,14 +23,17 @@ public class TurnManager : MonoBehaviour
 
     private void Awake()
     {
+        
         if (instance == null)
         {
             instance = this;
-            currentPlayerIndex = 1;
-            playerOne.SetPlayerTurn(1);
-            playerTwo.SetPlayerTurn(2);
-            playerThree.SetPlayerTurn(3);
-            playerFour.SetPlayerTurn(4);
+            for (int i = 0; i < playerTurns.Count; i++)
+            {
+                playerTurns[i].SetPlayerTurn(i);
+               // print(playerTurns[i].name + "   Player Index is: " + playerTurns[i].GetPlayerTurn());
+
+            }
+            currentPlayerIndex = 0;
             ChangeCamera();
         }
     }
@@ -56,8 +56,8 @@ public class TurnManager : MonoBehaviour
                 turnDelay = 0;
                 waitingForNextTurn = false;
                 ChangeTurn();
-                ChangeCamera();
                 currentTurnTime = 0;
+                Restart();
             }
         }
     }
@@ -84,52 +84,49 @@ public class TurnManager : MonoBehaviour
 
     private void ChangeTurn()
     {
-        if (currentPlayerIndex == 1)
+        currentPlayerIndex++;
+        currentPlayerIndex = currentPlayerIndex % playerTurns.Count;
+        if (playerTurns[currentPlayerIndex].MV().enabled == false)
         {
-            currentPlayerIndex = 2;
+            ChangeTurn();
         }
-        else if (currentPlayerIndex == 2)
-        {
-            currentPlayerIndex = 3;
-        }
-        else if (currentPlayerIndex == 3)
-        {
-            currentPlayerIndex = 4;
-        }
-        else if (currentPlayerIndex == 4)
-        {
-            currentPlayerIndex = 1;
-        }
+        ChangeCamera();
+
     }
     private void ChangeCamera()
     {
-        if (currentPlayerIndex == 1)
+        for (int i = 0; i < playerTurns.Count; i++)
         {
-            camOne.enabled = true;
-            camTwo.enabled = false;
-            camThree.enabled = false;
-            camFour.enabled = false;
+            if (i == currentPlayerIndex)
+            {
+                playerTurns[i].GetCamera().enabled = true;
+            }
+            else
+            {
+                playerTurns[i].GetCamera().enabled = false;
+            }
+            /*if (playerTurns[currentPlayerIndex].enabled == false)
+            {
+                ChangeCamera();
+            }*/
+
         }
-        else if (currentPlayerIndex == 2)
+    
+    }
+
+    public void Restart()
+    {
+        int playersLeft = playerTurns.Count;
+        for (int i = 0; i < playerTurns.Count; i++)
         {
-            camOne.enabled = false;
-            camTwo.enabled = true;
-            camThree.enabled = false;
-            camFour.enabled = false;
+            if (playerTurns[i].MV().enabled == false)
+            {
+                playersLeft--;
+            }
         }
-        else if (currentPlayerIndex == 3)
+        if (playersLeft <= 1)
         {
-            camOne.enabled = false;
-            camTwo.enabled = false;
-            camThree.enabled = true;
-            camFour.enabled = false;
-        }
-        else if (currentPlayerIndex == 4)
-        {
-            camOne.enabled = false;
-            camTwo.enabled = false;
-            camThree.enabled = false;
-            camFour.enabled = true;
+            SceneManager.LoadScene("Game");
         }
     }
 }   
