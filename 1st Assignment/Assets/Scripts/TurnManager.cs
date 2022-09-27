@@ -126,7 +126,7 @@ public class TurnManager : MonoBehaviour
         }
         if (playersLeft <= 1)
         {
-            SceneManager.LoadScene("Game");
+            SceneManager.LoadScene("Menu");
         }
     }
 }   
