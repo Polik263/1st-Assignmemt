@@ -23,9 +23,12 @@ public class PlayerHealth : MonoBehaviour
     {
         if (collision.collider.tag == "Projectile")
         {
-            TakeDamage(100);
+            TakeDamage(5);
         }
-    
+        if (collision.collider.tag == "BazookaProjectile")
+        {
+            TakeDamage(90);
+        }
 
         if (currentHealth <= 0)
 

@@ -7,11 +7,14 @@ public class Projectile : MonoBehaviour
     public Collider projectileCollider;
     [SerializeField] private float speed;
     [SerializeField] private Rigidbody projectileBody;
-    [SerializeField] private GameObject damageIndicatorPrefab;
+    [SerializeField] private GameObject bazooka1;
+    [SerializeField] private GameObject bazooka2;
+    [SerializeField] private GameObject bazooka3;
+    [SerializeField] private GameObject bazooka4;
     private bool isActive;
 
     public Projectile(bool isActive)
-    {
+    { 
         this.isActive = isActive;
     }
 

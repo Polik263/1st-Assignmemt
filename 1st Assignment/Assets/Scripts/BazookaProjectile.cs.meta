@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 8e5519e864a847048b8aeca318a0fff4
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - projectileCollider: {fileID: 1355993066600330525, guid: 47c057ecaafaceb43aff5845f29609d8, type: 3}
+  - projectileBody: {instanceID: 0}
+  - damageIndicatorPrefab: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

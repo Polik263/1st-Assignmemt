@@ -3,7 +3,19 @@ guid: 3998a04160b1f8847b991bbd8bf35ff6
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - playerTurn: {instanceID: 0}
+  - projectilePrefab: {instanceID: 0}
+  - shootingStartPosition: {instanceID: 0}
+  - bazooka1: {instanceID: 0}
+  - bazooka2: {instanceID: 0}
+  - bazooka3: {instanceID: 0}
+  - bazooka4: {instanceID: 0}
+  - bazookaProjectilePrefab: {fileID: 1171051930367006700, guid: 47c057ecaafaceb43aff5845f29609d8, type: 3}
+  - bazookaPickUp1: {instanceID: 0}
+  - bazookaPickUp2: {instanceID: 0}
+  - bazookaPickUp3: {instanceID: 0}
+  - bazookaPickUp4: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
