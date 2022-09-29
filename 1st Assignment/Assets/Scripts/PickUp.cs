@@ -34,14 +34,14 @@ public class PickUp : MonoBehaviour
             bazooka.enabled = true;
             weapon.enabled = false;
         }
-        if (collision.collider.tag == "Player3")
+        if (collision.collider.name == "Player3")
         {
             bazookaPickUp.SetActive(false);
             bazooka3.SetActive(true);
             bazooka.enabled = true;
             weapon.enabled = false;
         }
-        if (collision.collider.tag == "Player4")
+        if (collision.collider.name == "Player4")
         {
             bazookaPickUp.SetActive(false);
             bazooka4.SetActive(true);
